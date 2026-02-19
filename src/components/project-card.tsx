@@ -49,8 +49,8 @@ export function ProjectCard({
   };
 
   return (
-    <motion.div 
-      ref={ref} 
+    <motion.div
+      ref={ref}
       className="group mb-3 sm:mb-8 last:mb-0"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -60,21 +60,21 @@ export function ProjectCard({
       <motion.section
         className="bg-gradient-to-br from-gray-50 to-gray-100 max-w-[58rem] border border-black/5 rounded-xl overflow-hidden dark:text-white dark:from-white/5 dark:to-white/10 cursor-pointer relative group"
         onClick={handleClick}
-        whileHover={{ 
+        whileHover={{
           y: -8,
           scale: 1.01,
-          transition: { duration: 0.3 }
+          transition: { duration: 0.3 },
         }}
         whileTap={{ scale: 0.98 }}
       >
         {/* Hover gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
-        
+
         {/* Shine effect on hover */}
         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-xl" />
         <div className="flex flex-col lg:flex-row relative z-10">
           <div className="p-6 lg:w-1/2 flex flex-col h-full">
-            <motion.h3 
+            <motion.h3
               className="text-xl font-semibold mb-2 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent"
               whileHover={{ x: 4 }}
               transition={{ duration: 0.2 }}

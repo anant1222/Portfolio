@@ -56,7 +56,9 @@ export function Projects({ delay = 0 }: ProjectsProps) {
         <BlurFade delay={delay}>
           <div className="flex flex-col items-center justify-center space-y-2 text-center mb-6">
             <h2 className="text-3xl font-bold tracking-tighter">My Projects</h2>
-            <p className="text-sm text-muted-foreground">Innovative solutions across AI, Blockchain & Backend Systems</p>
+            <p className="text-sm text-muted-foreground">
+              Innovative solutions across AI, Blockchain & Backend Systems
+            </p>
           </div>
         </BlurFade>
         <div className="grid gap-5 max-w-[800px] mx-auto">

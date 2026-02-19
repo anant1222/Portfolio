@@ -14,8 +14,12 @@ export function Work({ delay = 0 }: WorkProps) {
       <div className="flex min-h-0 flex-col gap-y-3">
         <BlurFade delay={delay}>
           <div className="flex flex-col items-center justify-center space-y-2 mb-6">
-            <h2 className="text-3xl font-bold tracking-tighter">Work Experience</h2>
-            <p className="text-sm text-muted-foreground">Building scalable backend systems & AI solutions</p>
+            <h2 className="text-3xl font-bold tracking-tighter">
+              Work Experience
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Building scalable backend systems & AI solutions
+            </p>
           </div>
         </BlurFade>
         {experiencesData.map((work, id) => (

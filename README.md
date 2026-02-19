@@ -65,7 +65,7 @@ The contact form uses EmailJS to send emails directly from the frontend without 
      - `{{subject}}` - Email subject (also use in Subject field)
      - `{{message}}` - Message content
      - `{{reply_to}}` - Reply-to email (same as from_email)
-   
+
    **Note**: Make sure the Subject field in your EmailJS template uses `{{subject}}` and not a hardcoded value like "Contact Us:" - otherwise the dynamic subject won't appear.
 
 5. **Install EmailJS package:**

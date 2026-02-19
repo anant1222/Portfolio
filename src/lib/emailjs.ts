@@ -13,19 +13,23 @@ export interface EmailParams {
   reply_to?: string;
 }
 
-export const sendEmailViaEmailJS = async (params: EmailParams): Promise<{ success: boolean; error?: string }> => {
+export const sendEmailViaEmailJS = async (
+  params: EmailParams,
+): Promise<{ success: boolean; error?: string }> => {
   // Validate required environment variables
   if (!PUBLIC_KEY) {
     return {
       success: false,
-      error: "EmailJS Public Key is not configured. Please set NEXT_PUBLIC_EMAILJS_PUBLIC_KEY in your environment variables.",
+      error:
+        "EmailJS Public Key is not configured. Please set NEXT_PUBLIC_EMAILJS_PUBLIC_KEY in your environment variables.",
     };
   }
 
   if (!TEMPLATE_ID) {
     return {
       success: false,
-      error: "EmailJS Template ID is not configured. Please set NEXT_PUBLIC_EMAILJS_TEMPLATE_ID in your environment variables.",
+      error:
+        "EmailJS Template ID is not configured. Please set NEXT_PUBLIC_EMAILJS_TEMPLATE_ID in your environment variables.",
     };
   }
 
@@ -90,7 +94,11 @@ export const sendEmailViaEmailJS = async (params: EmailParams): Promise<{ succes
     });
 
     // Send email
-    const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+    const response = await emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      templateParams,
+    );
 
     if (response.status === 200) {
       return { success: true };
@@ -102,7 +110,7 @@ export const sendEmailViaEmailJS = async (params: EmailParams): Promise<{ succes
     }
   } catch (error: unknown) {
     console.error("EmailJS Error:", error);
-    
+
     // Handle specific EmailJS errors
     if (error instanceof Error) {
       return {

@@ -39,7 +39,9 @@ export function Hero({ delay = 0 }: HeroProps) {
                 src={personalData.avatarUrl}
                 className="object-cover"
               />
-              <AvatarFallback className="text-2xl font-bold">{personalData.initials}</AvatarFallback>
+              <AvatarFallback className="text-2xl font-bold">
+                {personalData.initials}
+              </AvatarFallback>
             </Avatar>
           </BlurFade>
         </div>

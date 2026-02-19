@@ -15,7 +15,9 @@ export function Education({ delay = 0 }: EducationProps) {
         <BlurFade delay={delay}>
           <div className="flex flex-col items-center justify-center space-y-2 mb-6">
             <h2 className="text-3xl font-bold tracking-tighter">Education</h2>
-            <p className="text-sm text-muted-foreground">Continuous learning & growth</p>
+            <p className="text-sm text-muted-foreground">
+              Continuous learning & growth
+            </p>
           </div>
         </BlurFade>
         {educationData.map((education, id) => (

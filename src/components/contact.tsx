@@ -35,7 +35,9 @@ export function Contact({ delay = 0 }: ContactProps) {
       });
 
       if (result.success) {
-        toast.success("Email sent successfully! I'll get back to you soon.");
+        toast.success(
+          "Email sent successfully! I&apos;ll get back to you soon.",
+        );
         // Reset form safely using ref
         if (formRef.current) {
           formRef.current.reset();
@@ -60,11 +62,13 @@ export function Contact({ delay = 0 }: ContactProps) {
               Get in Touch
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto text-base">
-              I'm always open to discussing new opportunities, collaborations, or just having a chat about technology. Feel free to reach out!
+              I&apos;m always open to discussing new opportunities,
+              collaborations, or just having a chat about technology. Feel free
+              to reach out!
             </p>
             <p className="text-sm text-muted-foreground max-w-lg mx-auto">
               Contact me directly at{" "}
-              <motion.a 
+              <motion.a
                 className="underline hover:text-primary transition-colors font-medium"
                 href="mailto:anydec22@gmail.com"
                 whileHover={{ scale: 1.05 }}

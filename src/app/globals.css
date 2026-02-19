@@ -155,7 +155,8 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
 
 /* Custom animations */
 @keyframes gradient {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {

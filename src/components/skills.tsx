@@ -22,7 +22,9 @@ export function Skills({ delay = 0 }: SkillsProps) {
         <BlurFade delay={delay}>
           <div className="flex flex-col items-center justify-center space-y-2 text-center mb-6">
             <h2 className="text-3xl font-bold tracking-tighter">My Skills</h2>
-            <p className="text-sm text-muted-foreground">Technologies & tools I work with</p>
+            <p className="text-sm text-muted-foreground">
+              Technologies & tools I work with
+            </p>
           </div>
         </BlurFade>
 
@@ -67,16 +69,16 @@ export function Skills({ delay = 0 }: SkillsProps) {
                     type: "spring",
                     stiffness: 100,
                   }}
-                  whileHover={{ 
+                  whileHover={{
                     y: -5,
                     scale: 1.05,
-                    transition: { duration: 0.2 }
+                    transition: { duration: 0.2 },
                   }}
                   className="flex flex-col items-center justify-center p-3 sm:p-4 bg-gradient-to-br from-gray-50 via-gray-50 to-gray-100 dark:from-gray-800 dark:via-gray-800 dark:to-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 w-full h-24 sm:h-28 group relative overflow-hidden"
                 >
                   {/* Hover background effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
+
                   <span className="text-xs text-center font-semibold text-gray-800 dark:text-gray-200 leading-tight mb-2 sm:mb-3 flex-1 flex items-center justify-center group-hover:text-primary transition-colors relative z-10">
                     {skill.name}
                   </span>

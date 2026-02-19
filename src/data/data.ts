@@ -7,9 +7,9 @@ export const personalData = {
   url: "https://www.anantyadav.dev/",
   location: "Noida, UP, India",
   locationLink: "https://www.google.com/maps/place/noida",
-  description:
-    "Senior Backend Engineer at W3villa Technology.",
-  summary: "I'm a **Senior Backend Engineer** with **5+ years of experience**, currently working at W3villa Technology. I specialize in building **scalable backend systems**, **microservices architecture**, **AI/LLM integrations**, **blockchain-based systems**, and **high-throughput real-time systems**. I'm passionate about solving complex technical challenges and optimizing system performance.",
+  description: "Senior Backend Engineer at W3villa Technology.",
+  summary:
+    "I'm a **Senior Backend Engineer** with **5+ years of experience**, currently working at W3villa Technology. I specialize in building **scalable backend systems**, **microservices architecture**, **AI/LLM integrations**, **blockchain-based systems**, and **high-throughput real-time systems**. I'm passionate about solving complex technical challenges and optimizing system performance.",
   avatarUrl: "/me.jpg",
 } as const;
 
@@ -161,7 +161,7 @@ export const experiencesData = [
       "Collaborated with frontend teams to ensure seamless API integration and optimal data flow.",
       "Optimized database queries and implemented efficient data access patterns for improved response times.",
     ],
-  }
+  },
 ] as const;
 
 export const educationData = [
@@ -345,5 +345,5 @@ export const projectsData = [
     image: "/job-portal.png",
     images: ["/job-portal.png"],
     video: "",
-  }
+  },
 ] as const;
