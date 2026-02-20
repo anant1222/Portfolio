@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { Button } from "@/components/ui/button";
+import { Icon } from "@iconify/react";
 interface Props {
   title: string;
   href?: string;
@@ -17,6 +18,7 @@ interface Props {
   link?: string;
   image?: string;
   video?: string;
+  technologies?: readonly { name: string; icon?: string }[];
   links?: readonly {
     icon: React.ReactNode;
     type: string;
@@ -34,6 +36,7 @@ export function ProjectCard({
   link,
   image,
   video,
+  technologies,
   links,
   className,
   onClick,
@@ -172,7 +175,7 @@ export function ProjectCard({
           </div>
 
           <div className="hidden lg:flex lg:w-1/2 lg:items-end lg:justify-end relative overflow-hidden">
-            {image && (
+            {image ? (
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
@@ -188,9 +191,7 @@ export function ProjectCard({
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-gray-100/50 dark:to-white/5" />
               </motion.div>
-            )}
-
-            {video && (
+            ) : video ? (
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
@@ -204,6 +205,49 @@ export function ProjectCard({
                   playsInline
                   className="w-full h-full rounded-r-xl shadow-2xl object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-l from-transparent to-gray-100/50 dark:to-white/5 rounded-r-xl" />
+              </motion.div>
+            ) : (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+                className="relative w-full h-64 lg:h-auto lg:max-w-md bg-gradient-to-br from-primary/10 via-primary/5 to-primary/10 dark:from-primary/20 dark:via-primary/10 dark:to-primary/20 rounded-r-xl flex items-center justify-center p-8 shadow-2xl border border-primary/20"
+              >
+                <div className="text-center space-y-4 w-full">
+                  <div className="text-5xl font-bold text-primary/70 dark:text-primary/50 mb-4 tracking-tighter">
+                    {title
+                      .split(" ")
+                      .map((word) => word[0])
+                      .filter((char) => char && char.match(/[A-Z]/))
+                      .join("")
+                      .substring(0, 3) || "PRO"}
+                  </div>
+                  {technologies && technologies.length > 0 ? (
+                    <div className="grid grid-cols-3 gap-2 max-w-xs mx-auto">
+                      {technologies.slice(0, 6).map((tech, idx) => (
+                        <div
+                          key={idx}
+                          className="flex flex-col items-center justify-center p-2 bg-white/60 dark:bg-white/10 rounded-lg backdrop-blur-sm border border-white/20"
+                          title={tech.name}
+                        >
+                          {tech.icon && (
+                            <Icon
+                              icon={tech.icon}
+                              className="w-5 h-5 text-primary/80 dark:text-primary/60 mb-1"
+                            />
+                          )}
+                          <span className="text-[10px] text-gray-700 dark:text-gray-300 font-medium truncate w-full text-center leading-tight">
+                            {tech.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                      Private Project
+                    </div>
+                  )}
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-gray-100/50 dark:to-white/5 rounded-r-xl" />
               </motion.div>
             )}

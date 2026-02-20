@@ -76,15 +76,23 @@ export const sendEmailViaEmailJS = async (
     // Initialize EmailJS with public key
     emailjs.init(PUBLIC_KEY);
 
-    // Prepare template parameters
-    // Note: For EmailJS, the subject needs to be configured in the template settings
-    // Make sure your EmailJS template uses {{subject}} in the Subject field
+    // Prepare template parameters matching EmailJS template
+    // Template variables: {{name}}, {{email}}, {{subject}}, {{message}}, {{time}}, {{year}}
+    const now = new Date();
+    const currentTime = now.toLocaleString("en-US", {
+      dateStyle: "long",
+      timeStyle: "short",
+    });
+    const currentYear = now.getFullYear();
+
     const templateParams = {
-      from_name: params.from_name || "Portfolio Visitor",
-      from_email: params.from_email,
-      subject: params.subject.trim(),
-      message: params.message.trim(),
-      reply_to: params.reply_to || params.from_email,
+      name: params.from_name || "Portfolio Visitor", // {{name}} in template
+      email: params.from_email, // {{email}} in template
+      subject: params.subject.trim(), // {{subject}} in template
+      message: params.message.trim(), // {{message}} in template
+      time: currentTime, // {{time}} in template
+      year: currentYear.toString(), // {{year}} in template
+      reply_to: params.reply_to || params.from_email, // For reply-to functionality
     };
 
     // Debug log (remove in production if needed)

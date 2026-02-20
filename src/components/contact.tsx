@@ -35,9 +35,7 @@ export function Contact({ delay = 0 }: ContactProps) {
       });
 
       if (result.success) {
-        toast.success(
-          "Email sent successfully! I&apos;ll get back to you soon.",
-        );
+        toast.success("Thank you! Your message has been sent successfully.");
         // Reset form safely using ref
         if (formRef.current) {
           formRef.current.reset();

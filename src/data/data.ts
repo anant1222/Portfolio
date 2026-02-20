@@ -222,8 +222,8 @@ export const projectsData = [
       { name: "AWS", icon: "logos:aws" },
     ],
     links: [],
-    image: "/job-portal.png",
-    images: ["/job-portal.png"],
+    image: undefined, // Private project - no image available
+    images: [],
     video: "",
   },
   {
@@ -252,8 +252,8 @@ export const projectsData = [
       { name: "AWS S3", icon: "logos:aws-s3" },
     ],
     links: [],
-    image: "/job-portal.png",
-    images: ["/job-portal.png"],
+    image: undefined, // Private project - no image available
+    images: [],
     video: "",
   },
   {
@@ -282,8 +282,8 @@ export const projectsData = [
       { name: "Async Systems", icon: "material-symbols:sync-alt" },
     ],
     links: [],
-    image: "/job-portal.png",
-    images: ["/job-portal.png"],
+    image: undefined, // Private project - no image available
+    images: [],
     video: "",
   },
   {
@@ -311,8 +311,8 @@ export const projectsData = [
       { name: "Async Processing", icon: "material-symbols:sync-alt" },
     ],
     links: [],
-    image: "/job-portal.png",
-    images: ["/job-portal.png"],
+    image: undefined, // Private project - no image available
+    images: [],
     video: "",
   },
   {
@@ -342,8 +342,8 @@ export const projectsData = [
       { name: "Express.js", icon: "logos:express" },
     ],
     links: [],
-    image: "/job-portal.png",
-    images: ["/job-portal.png"],
+    image: undefined, // Private project - no image available
+    images: [],
     video: "",
   },
 ] as const;
