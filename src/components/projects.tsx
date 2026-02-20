@@ -31,15 +31,15 @@ export function Projects({ delay = 0 }: ProjectsProps) {
     }[];
   } | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [visibleProjects, setVisibleProjects] = useState(INITIAL_PROJECTS_TO_SHOW);
+  const [visibleProjects, setVisibleProjects] = useState(
+    INITIAL_PROJECTS_TO_SHOW,
+  );
 
   const hasMoreProjects = visibleProjects < projectsData.length;
   const displayedProjects = projectsData.slice(0, visibleProjects);
 
   const handleShowMore = () => {
-    setVisibleProjects((prev) =>
-      Math.min(prev + 3, projectsData.length),
-    );
+    setVisibleProjects((prev) => Math.min(prev + 3, projectsData.length));
   };
 
   const handleProjectClick = (project: any) => {

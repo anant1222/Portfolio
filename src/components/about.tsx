@@ -47,7 +47,7 @@ export function About({ delay = 0 }: AboutProps) {
           >
             {/* Glow effect - greenish with less opacity */}
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-green-500 to-teal-500 rounded-xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
-            
+
             <Button
               onClick={handleDownloadCV}
               className="group relative flex items-center gap-3 bg-gradient-to-r from-emerald-500/80 via-green-600/80 to-teal-600/80 hover:from-emerald-400/90 hover:via-green-500/90 hover:to-teal-500/90 text-white px-8 py-4 rounded-xl shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 border-2 border-white/20 dark:border-white/15 font-semibold text-base backdrop-blur-md"
